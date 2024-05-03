@@ -1,0 +1,10 @@
+<section class="section-work">
+  <h1>work:</h1>
+  {% for project in site.projects %}
+    <p>{{ project.title }}</p>
+    {{ project.content | markdownify }}
+    {% for image in project.images %}
+      {{ image.src }}
+    {% endfor %}
+  {% endfor %}
+</section>

@@ -2,7 +2,7 @@
 title: about
 ---
 
-UNDOING LAB  
+**UNDOING LAB**  
 Is a digital lab  
 that casts new worlds  
 through new sounds

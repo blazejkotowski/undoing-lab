@@ -20,23 +20,27 @@ layout: base
     <article>
       {% for page in site.pages %}
         {% if page.title == 'about' %}
-          {{ page.content | markdownify }}
+          <div class="about-container">
+            {{ page.content | markdownify }}
+          </div>
         {% endif %}
       {% endfor %}
     </article>
     <h1>who we are:</h1>
     <article>
-      <div>
+      <div class="profiles-wrapper">
         {% for page in site.pages %}
           {% if page.title == 'profile b' %}
-            {{ page.content | markdownify }}
+            <div class="profile-container">
+              {{ page.content | markdownify }}
+            </div>
           {% endif %}
         {% endfor %}
-      </div>
-      <div>
         {% for page in site.pages %}
           {% if page.title == 'profile d' %}
-            {{ page.content | markdownify }}
+            <div class="profile-container">
+              {{ page.content | markdownify }}
+            </div>
           {% endif %}
         {% endfor %}
       </div>
@@ -48,18 +52,21 @@ layout: base
     </div>
   </section>
 </section>
-<section class="section-work">
-  <h1>work:</h1>
-  {% for project in site.projects %}
-    <p>{{ project.title }}</p>
-    {{ project.content | markdownify }}
-    {% for image in project.images %}
-      {{ image.src }}
-    {% endfor %}
-  {% endfor %}
-</section>
-<section class="section-contact"></section>
 {%  comment  %} 
-        {% include work-navigation.liquid %}
+          {% include section-work.liquid %}
+{% endcomment %}
+<section class="section-contact">
+  <div class="contact-wrapper">
+    <div class="contact-container">
+      <a href="mailto:collaborate@undoing.lab">collaborate@undoing.lab</a>
+      <a href="mailto:contact@undoing.lab">contact@undoing.lab</a>
+    </div>
+    <div class="contact-container">
+      <a href="link-to-linkedin">linkedin</a>
+      <a href="link-to-instagram">instagram</a>
+    </div>
+  </div></section>
+{%  comment  %} 
+                        {% include work-navigation.liquid %}
 {% endcomment %}
 {{ content }}

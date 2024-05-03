@@ -204,3 +204,35 @@ section.absolute {
 		transform: translate(0%, -50%);
 	}
 }
+
+.about-container {
+	width: 50%;
+}
+
+.profiles-wrapper,
+.contact-wrapper {
+	display: flex;
+}
+
+.profile-container,
+.contact-container {
+	flex-basis: 50%;
+}
+
+.contact-wrapper {
+	width: 70%;
+	height: 40%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	a {
+		color: variables.$purple;
+		font-size: 1.1em;
+		text-decoration: none;
+	}
+}
