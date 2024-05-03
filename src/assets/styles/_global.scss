@@ -1,0 +1,206 @@
+@use "fonts";
+@use "variables";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+body {
+	background: variables.$backgroundColor;
+	color: variables.$bodyColor;
+	font-family: variables.$bodyFont;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	pointer-events: none;
+
+	.main-logo {
+		width: 23%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		padding: 1rem;
+
+		transform-origin: 0% 100%;
+		transition: 0.15s;
+
+		&.main-logo-big {
+			transform: scale(1.6);
+		}
+	}
+}
+
+.section-background {
+	position: fixed;
+	z-index: -1;
+	svg {
+		position: absolute;
+		top: 50%;
+		height: 379%;
+
+		transition: 0.3s;
+
+		fill: white;
+		stroke: variables.$purple;
+		stroke-width: 2px;
+
+		&.outlined-color {
+			fill: white;
+			stroke: variables.$purple;
+		}
+
+		&.filled-color {
+			fill: variables.$purple;
+			stroke: white;
+		}
+
+		&.outlined-black {
+			fill: white;
+			stroke: black;
+		}
+
+		&:first-child {
+			animation: scroll-banner 360s infinite linear;
+		}
+		&:last-child {
+			animation: scroll-banner1 360s infinite linear;
+			animation-delay: -360s;
+		}
+	}
+}
+
+.section-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+section {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.section-title {
+	position: absolute;
+	top: 0;
+}
+
+.section-about {
+	margin-top: 100vh;
+
+	padding: 1rem;
+	p {
+		font-size: 1.2rem;
+	}
+}
+
+.section-work {
+	pointer-events: all;
+}
+
+.element-title-description {
+	width: 75%;
+	visibility: hidden;
+	padding: 1rem;
+	&.sticky {
+		visibility: visible;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+
+	p {
+		margin: 0;
+
+		font-family: "Neutral Face";
+		font-size: 3.8vw;
+		line-height: 1.1em;
+	}
+}
+
+section.absolute {
+	position: absolute;
+	&:nth-child(1) {
+		background: #119da4;
+	}
+	&:nth-child(2) {
+		background: #6d9dc5;
+	}
+}
+
+.div-sticky {
+	width: 80%;
+	height: 20vh;
+	position: sticky;
+	top: 0;
+	background: variables.$purple;
+}
+
+.animation-test-wrapper {
+	position: relative;
+	height: calc((45vw * 2) + 2rem);
+}
+
+.animation-test-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.animation-test {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+
+	padding: 1rem;
+
+	offset-path: polygon(0% 0%, calc(-100% + 100vw) 100%);
+	offset-anchor: 0 0;
+	offset-rotate: 0deg;
+	offset-distance: 0%;
+	/*animation: move 3000ms infinite alternate ease-in-out;*/
+}
+
+.animation-test-element {
+	width: calc(20vw - 1rem);
+	height: 45vw;
+	background: aqua;
+}
+
+@keyframes move {
+	0% {
+		offset-distance: 0%;
+	}
+	100% {
+		offset-distance: 50%;
+	}
+}
+
+@keyframes scroll-banner {
+	0% {
+		transform: translate(0, -50%);
+	}
+	100% {
+		transform: translate(-100%, -50%);
+	}
+}
+
+@keyframes scroll-banner1 {
+	0% {
+		transform: translate(100%, -50%);
+	}
+	100% {
+		transform: translate(0%, -50%);
+	}
+}

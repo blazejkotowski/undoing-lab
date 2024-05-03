@@ -1,0 +1,25 @@
+title: Undoing Lab
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+    A digital sound lab, where we craft compelling narratives to make your vision heard.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username: jekyll
+
+source: src
+layouts_dir: assets/_layouts
+includes_dir: assets/_includes
+
+collections_dir: _content
+
+collections:
+    - pages
+    - projects
+
+collections:
+    projects:
+        output: true
+        permalink: /:name
+    pages:
+        output: false

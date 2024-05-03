@@ -1,0 +1,65 @@
+---
+layout: base
+---
+
+<header>
+  <nav></nav>
+  <img
+    class="main-logo main-logo-big"
+    src="/assets/images/undoing-logo.png"
+    alt="" />
+</header>
+<section class="section-wrapper">
+  <div class="element-title-description sticky">
+    <p>
+      {{ site.description }}
+    </p>
+  </div>
+  <section class="section-title"></section>
+  <section class="section-about">
+    <article>
+      {% for page in site.pages %}
+        {% if page.title == 'about' %}
+          {{ page.content | markdownify }}
+        {% endif %}
+      {% endfor %}
+    </article>
+    <h1>who we are:</h1>
+    <article>
+      <div>
+        {% for page in site.pages %}
+          {% if page.title == 'profile b' %}
+            {{ page.content | markdownify }}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div>
+        {% for page in site.pages %}
+          {% if page.title == 'profile d' %}
+            {{ page.content | markdownify }}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </article>
+    <div class="element-title-description">
+      <p>
+        {{ site.description }}
+      </p>
+    </div>
+  </section>
+</section>
+<section class="section-work">
+  <h1>work:</h1>
+  {% for project in site.projects %}
+    <p>{{ project.title }}</p>
+    {{ project.content | markdownify }}
+    {% for image in project.images %}
+      {{ image.src }}
+    {% endfor %}
+  {% endfor %}
+</section>
+<section class="section-contact"></section>
+{%  comment  %} 
+        {% include work-navigation.liquid %}
+{% endcomment %}
+{{ content }}
