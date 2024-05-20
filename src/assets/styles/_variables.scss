@@ -1,5 +1,40 @@
 $purple: #7900dd;
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
-$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$bodyFont: "Roboto";
+
+@mixin media-xs {
+	@media screen and (min-width: 420px) {
+		@content;
+	}
+}
+@mixin media-sm {
+	@media screen and (min-width: 640px) {
+		@content;
+	}
+}
+@mixin media-md {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+@mixin media-lg {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
+}
+@mixin media-xl {
+	@media screen and (min-width: 1280px) {
+		@content;
+	}
+}
+@mixin media-2xl {
+	@media screen and (min-width: 1536px) {
+		@content;
+	}
+}
+@mixin media-4xl {
+	@media screen and (min-width: 2800px) {
+		@content;
+	}
+}
