@@ -1,10 +1,11 @@
 const mainLogo = document.getElementsByClassName("main-logo")[0]
 const sectionWork = document.getElementsByClassName("section-work")[0]
 const worksContainer = document.getElementsByClassName("animation-test")[0]
-const elementTitleDescription = document.getElementsByClassName("element-title-description")[0]
+const elementTitleDescription = document.getElementsByClassName("element-title-description")
+const headerContainer = document.getElementsByTagName("header")[0]
+const body = document.getElementsByTagName("body")[0]
 
 const backgroundSection = document.getElementsByClassName("section-background")[0]
-console.log(backgroundSection.children)
 
 class Section {
 	top = 0
@@ -15,7 +16,9 @@ class Section {
 	}
 
 	setInitVals() {
-		this.top = Math.floor(this.element.getBoundingClientRect().top)
+		this.top =
+			Math.floor(this.element.getBoundingClientRect().top) -
+			elementTitleDescription[1].clientHeight
 		this.height = Math.floor(this.element.getBoundingClientRect().height)
 		this.bottom = this.top + this.height
 	}
@@ -34,30 +37,48 @@ const aboutSection = new Section(document.getElementsByClassName("section-about"
 const workSection = new Section(document.getElementsByClassName("section-work")[0])
 const contactSection = new Section(document.getElementsByClassName("section-contact")[0])
 
-let myelementposition
-
 window.addEventListener("load", (event) => {
 	aboutSection.element.style.marginTop = `${
-		window.innerHeight - elementTitleDescription.clientHeight
+		window.innerHeight - elementTitleDescription[1].clientHeight
 	}px`
+
+	headerContainer.style.height = `${
+		body.getBoundingClientRect().height - (window.innerHeight / 4) * 3
+	}px`
+
 	// myelementposition = sectionWork.getBoundingClientRect().top
 	aboutSection.setInitVals()
-	workSection.setInitVals()
+	// workSection.setInitVals()
 	contactSection.setInitVals()
 })
 
 window.onscroll = () => {
-	if (window.pageYOffset > 10) {
+	if (window.pageYOffset > 0) {
 		mainLogo.classList.remove("main-logo-big")
 	} else {
 		mainLogo.classList.add("main-logo-big")
 	}
 
+	if (window.pageYOffset > window.innerHeight / 2) {
+		elementTitleDescription[0].classList.add("small")
+	} else {
+		elementTitleDescription[0].classList.remove("small")
+	}
+	/*
 	if (
-		window.pageYOffset + window.innerHeight > aboutSection.top &&
-		aboutSection.bottom > window.pageYOffset
+		window.pageYOffset + aboutSection.top > aboutSection.top &&
+		window.pageYOffset < aboutSection.bottom
 	) {
-		console.log("about is visible")
+		elementTitleDescription[0].classList.add("small")
+	} else {
+		elementTitleDescription[0].classList.remove("small")
+	}
+*/
+	if (
+		window.pageYOffset + aboutSection.top > aboutSection.top &&
+		window.pageYOffset < aboutSection.bottom
+	) {
+		//console.log("about is visible")
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
 			element.classList.add("filled-color")
@@ -69,7 +90,7 @@ window.onscroll = () => {
 		}
 	}
 
-	if (window.pageYOffset > workSection.top && workSection.bottom > window.pageYOffset) {
+	if (window.pageYOffset >= workSection.top - 10 && window.pageYOffset < workSection.bottom) {
 		console.log("work is visible")
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
@@ -82,12 +103,13 @@ window.onscroll = () => {
 		}
 	}
 
-	if (window.pageYOffset > contactSection.top && contactSection.bottom > window.pageYOffset) {
+	if (window.pageYOffset > contactSection.top && window.pageYOffset < contactSection.bottom) {
 		console.log("contact is visible")
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
 			element.classList.add("outlined-color")
 		}
+		mainLogo.classList.add("main-logo-big")
 	} else {
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
