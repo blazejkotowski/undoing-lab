@@ -4,11 +4,19 @@ layout: base
 
 <header>
   <div class="header-container">
-    <nav></nav>
-    <img
-      class="main-logo main-logo-big"
-      src="/assets/images/undoing-logo.png"
-      alt="" />
+    <nav class="nav-big">
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#work">work</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+    <a href="/">
+      <img
+        class="main-logo main-logo-big"
+        src="/assets/images/undoing-logo.png"
+        alt="" />
+    </a>
   </div>
 </header>
 <section class="section-wrapper">
@@ -21,7 +29,7 @@ layout: base
       {% endfor %}
     </p>
   </div>
-  <section class="section-about">
+  <section class="section-about" id="about">
     {% for page in site.pages %}
       {% if page.title == 'about' %}
         <article class="about-container">
@@ -57,10 +65,8 @@ layout: base
     </div>
   </section>
 </section>
-{%  comment  %} 
-                                                                            {% include section-work.liquid %}
-{% endcomment %}
-<section class="section-contact">
+{% include section-work.liquid %}
+<section class="section-contact" id="contact">
   <div class="contact-wrapper">
     <div class="contact-container">
       <div class="contact-element">
@@ -91,8 +97,28 @@ layout: base
         <a href="link-to-instagram">instagram</a>
       </div>
     </div>
-  </div></section>
+  </div>
+  <footer>
+    <h6>
+      {% for page in site.pages %}
+        {% if page.title == 'general' %}
+          {{ page.description }}
+        {% endif %}
+      {% endfor %}
+    </h6>
+    <h6>
+      undoing-lab
+    </h6>
+    <div>
+      <!--
+        <h6>
+  <a href="/imprint">imprint</a>
+      </h6>
+      -->
+      <h6>2024</h6>
+    </div>
+  </footer></section>
 {%  comment  %} 
-                                                                                          {% include work-navigation.liquid %}
+                                                                                                                      {% include work-navigation.liquid %}
 {% endcomment %}
 {{ content }}
