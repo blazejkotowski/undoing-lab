@@ -1,5 +1,5 @@
-@use "fonts";
-@use "variables";
+@use 'fonts';
+@use 'variables';
 
 * {
 	box-sizing: border-box;
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Neutral Face";
+	font-family: 'Neutral Face';
 	font-weight: 400;
 	margin-top: 1.2em;
 	margin-bottom: 1.2em;

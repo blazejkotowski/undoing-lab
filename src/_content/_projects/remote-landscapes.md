@@ -1,5 +1,5 @@
 ---
-title: "remote landscapes"
+title: 'remote landscapes'
 tags:
     - installation
 ---

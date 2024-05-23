@@ -1,5 +1,5 @@
 ---
-title: world earth codec & vivarium
+title: 'world earth codec & vivarium'
 tags:
     - video
 images:

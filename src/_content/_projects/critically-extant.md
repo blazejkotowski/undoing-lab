@@ -1,5 +1,5 @@
 ---
-title: "critically extant"
+title: 'critically extant'
 tags:
     - installation
 ---
