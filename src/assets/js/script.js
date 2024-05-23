@@ -4,6 +4,7 @@ const worksContainer = document.getElementsByClassName("animation-test")[0]
 const elementTitleDescription = document.getElementsByClassName("element-title-description")
 const headerContainer = document.getElementsByTagName("header")[0]
 const body = document.getElementsByTagName("body")[0]
+const nav = document.getElementsByTagName("nav")[0]
 
 const backgroundSection = document.getElementsByClassName("section-background")[0]
 
@@ -39,27 +40,41 @@ const contactSection = new Section(document.getElementsByClassName("section-cont
 
 window.addEventListener("load", (event) => {
 	aboutSection.element.style.marginTop = `${
-		window.innerHeight - elementTitleDescription[1].clientHeight
+		window.innerHeight - elementTitleDescription[0].clientHeight
 	}px`
 
 	headerContainer.style.height = `${
 		body.getBoundingClientRect().height - (window.innerHeight / 4) * 3
 	}px`
 
+	navInitHeight = mainLogo.clientHeight
+	nav.style.height = `${navInitHeight}px`
+
 	// myelementposition = sectionWork.getBoundingClientRect().top
 	aboutSection.setInitVals()
-	// workSection.setInitVals()
+	workSection.setInitVals()
 	contactSection.setInitVals()
+
+	mainLogo.addEventListener(
+		"click",
+		() => {
+			window.scrollTo(0, 0)
+		},
+		false
+	)
 })
 
 window.onscroll = () => {
-	if (window.pageYOffset > 0) {
+	if (window.pageYOffset > window.innerHeight * 0.3) {
 		mainLogo.classList.remove("main-logo-big")
+		nav.classList.remove("nav-big")
+		nav.style.height = `${mainLogo.clientHeight}px`
 	} else {
 		mainLogo.classList.add("main-logo-big")
+		nav.classList.add("nav-big")
 	}
 
-	if (window.pageYOffset > window.innerHeight / 2) {
+	if (window.pageYOffset > window.innerHeight * 0.7) {
 		elementTitleDescription[0].classList.add("small")
 	} else {
 		elementTitleDescription[0].classList.remove("small")
@@ -75,7 +90,7 @@ window.onscroll = () => {
 	}
 */
 	if (
-		window.pageYOffset + aboutSection.top > aboutSection.top &&
+		window.pageYOffset + aboutSection.top * 0.7 > aboutSection.top &&
 		window.pageYOffset < aboutSection.bottom
 	) {
 		//console.log("about is visible")
@@ -90,7 +105,7 @@ window.onscroll = () => {
 		}
 	}
 
-	if (window.pageYOffset >= workSection.top - 10 && window.pageYOffset < workSection.bottom) {
+	if (window.pageYOffset >= workSection.top && window.pageYOffset < workSection.bottom) {
 		console.log("work is visible")
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
@@ -110,6 +125,7 @@ window.onscroll = () => {
 			element.classList.add("outlined-color")
 		}
 		mainLogo.classList.add("main-logo-big")
+		nav.style.height = `${navInitHeight}px`
 	} else {
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
