@@ -2,24 +2,35 @@
 layout: base
 ---
 
-<h1>{{ page.title }}</h1>
-
-<p>
-  {{ page.content | markdownify }}
-</p>
-
-{% for image in page.images %}
-  <img src={{ image.src | prepend: '/assets/images/' }} alt="">
-{% endfor %}
-
-{% if page.previous %}
-  <a href={{ page.previous.url }}>
-    <h6>{{ page.previous.title }}</h6>
-  </a>
-{% endif %}
-
-{% if page.next %}
-  <a href={{ page.next.url }}>
-    <h6>{{ page.next.title }}</h6>
-  </a>
-{% endif %}
+<main class="project-container">
+  <section class="project-description">
+    <div class="project-title">
+      <h1>{{ page.title }}</h1>
+    </div>
+    <article>
+      <div class="related-tags"></div>
+      <div class="project-text">{{ page.content | markdownify }}</div>
+    </article>
+  </section>
+  {% for image in page.images %}
+    <img src={{ image.src | prepend: '/assets/images/' }} alt="">
+  {% endfor %}
+  <div class="related-nav">
+    <div class="related-nav-element related-previous">
+      {% if page.previous %}
+        <h6>previous project</h6>
+        <a href={{ page.previous.url }}>
+          <h4>< {{ page.previous.title }}</h4>
+        </a>
+      {% endif %}
+    </div>
+    <div class="related-nav-element related-next">
+      {% if page.next %}
+        <h6>next project</h6>
+        <a href={{ page.next.url }}>
+          <h4>{{ page.next.title }} ></h4>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</main>
