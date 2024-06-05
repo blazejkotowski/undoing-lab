@@ -8,7 +8,7 @@ images:
       alt: ''
       caption: ''
 sound:
-    src: ''
+    src: 'servus-background-04.wav'
 video:
     src: ''
 layout: project

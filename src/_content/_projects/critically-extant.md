@@ -7,7 +7,7 @@ images:
       alt: ''
       caption: ''
 sound:
-    src: ''
+    src: 'critically-extant-entangled-speciments-15mins.wav'
 video:
     src: ''
 svg: <svg

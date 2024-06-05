@@ -10,7 +10,7 @@ images:
       alt: ''
       caption: ''
 sound:
-    src: ''
+    src: 'vivarium_sound.wav'
 video:
     src: ''
 layout: project
