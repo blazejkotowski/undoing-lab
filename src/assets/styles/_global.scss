@@ -11,8 +11,24 @@ body {
 	margin: 0;
 	background: variables.$backgroundColor;
 	color: variables.$bodyColor;
-	font-family: variables.$bodyFont;
+	font-family: 'Roboto', sans-serif;
 	letter-spacing: 0.3px;
+
+	&.purple {
+		--color: #8132f6;
+	}
+	&.green {
+		--color: #007355;
+	}
+	&.brown {
+		--color: #9e7c55;
+	}
+	&.red {
+		--color: #f41a42;
+	}
+	&.blue {
+		--color: #5c96d6;
+	}
 }
 
 h1,
@@ -106,7 +122,7 @@ header {
 			text-transform: uppercase;
 			color: black;
 			&:hover {
-				color: variables.$main-00;
+				color: var(--color);
 			}
 		}
 		@include variables.media-sm {
@@ -179,22 +195,22 @@ header {
 	z-index: -1;
 	svg {
 		position: absolute;
-		top: 50%;
+		top: -117%;
 		height: 379%;
 
 		transition: 0.3s;
 
 		fill: white;
-		stroke: variables.$main-00;
+		stroke: var(--color);
 		stroke-width: 2px;
 
 		&.outlined-color {
 			fill: white;
-			stroke: variables.$main-00;
+			stroke: var(--color);
 		}
 
 		&.filled-color {
-			fill: variables.$main-00;
+			fill: var(--color);
 			stroke: white;
 		}
 
@@ -243,6 +259,7 @@ section {
 	h2 {
 		margin-top: 2rem;
 		margin-bottom: 4rem;
+		padding-top: 1rem;
 	}
 
 	h6 {
@@ -254,13 +271,37 @@ section {
 		text-decoration: none;
 		color: black;
 		&:hover {
-			color: variables.$main-00;
+			color: var(--color);
 		}
 	}
 }
 
 .section-contact {
 	height: 100vh;
+}
+
+.main-sound-player {
+	position: absolute;
+	right: 10rem;
+	top: 12%;
+	cursor: pointer;
+	svg {
+		width: 7vw;
+		min-width: 80px;
+		height: auto;
+		stroke: var(--color);
+		stroke-width: 2px;
+		fill: transparent;
+		transition: 0.2s;
+
+		&:hover {
+			fill: var(--color);
+		}
+	}
+	@include variables.media-lg {
+		right: 6rem;
+		top: 6rem;
+	}
 }
 
 .element-title-description {
@@ -328,7 +369,7 @@ section.absolute {
 	height: 20vh;
 	position: sticky;
 	top: 0;
-	background: variables.$main-00;
+	background: var(--color);
 }
 
 .animation-test-wrapper {
@@ -425,7 +466,7 @@ section.absolute {
 	display: flex;
 	flex-direction: column;
 	a {
-		color: variables.$main-00;
+		color: var(--color);
 		text-decoration: none;
 
 		&:hover {
@@ -437,14 +478,14 @@ section.absolute {
 		width: 5vw;
 		min-width: 50px;
 		height: auto;
-		stroke: variables.$main-00;
+		stroke: var(--color);
 		stroke-width: 2px;
 		fill: transparent;
 		margin-bottom: 1rem;
 		transition: 0.2s;
 
 		&:hover {
-			fill: variables.$main-00;
+			fill: var(--color);
 		}
 
 		@include variables.media-2xl {
@@ -485,23 +526,37 @@ footer {
 	position: relative;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	gap: 0.5rem;
 	align-items: end;
+	@include variables.media-md {
+		flex-direction: row;
+	}
 }
 
 .work-element {
-	height: 60vh;
-	flex-basis: 20%;
-	display: flex;
+	position: relative;
+	height: 15vh;
+	width: 100%;
+	/*display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-between;*/
 	text-decoration: none;
 	color: black;
 	h3 {
 		padding-right: 2rem;
 		margin: 0;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
 	}
+
+	@include variables.media-md {
+		height: 60vh;
+		flex-basis: 20%;
+		width: unset;
+	}
+
 	&:nth-child(1) {
 		stroke: variables.$main-00;
 	}
@@ -550,15 +605,15 @@ footer {
 .work-element-background {
 	position: relative;
 	width: 100%;
-	height: 50vh;
+	height: 80%;
 	overflow: hidden;
 	svg {
 		width: auto;
-		height: 230%;
+		height: 350%;
 		margin: 0;
 		white-space: nowrap;
 		position: absolute;
-		top: 55%;
+		top: -70%;
 		stroke-width: 2px;
 		transition: 0.3s;
 		&:first-child {
@@ -568,35 +623,83 @@ footer {
 			animation: scroll-banner1 200s infinite linear;
 			animation-delay: -200s;
 		}
+
+		@include variables.media-md {
+			height: 230%;
+			top: -50%;
+		}
+	}
+}
+
+.to-full-list-button {
+	cursor: pointer;
+	margin-top: 4rem;
+	color: var(--color);
+	&.list-visible::before {
+		content: '–';
+	}
+	&::before {
+		content: '+';
+	}
+}
+
+.full-works-list {
+	width: calc(80% - 1rem);
+	margin-left: 1rem;
+	display: block;
+	h3 {
+		margin: 0.5em 0;
+	}
+
+	a:hover {
+		&:nth-child(1n + 1) {
+			color: variables.$main-00;
+		}
+		&:nth-child(2n + 2) {
+			color: variables.$main-01;
+		}
+		&:nth-child(3n + 3) {
+			color: variables.$main-02;
+		}
+		&:nth-child(4n + 4) {
+			color: variables.$main-03;
+		}
+		&:nth-child(5n + 5) {
+			color: variables.$main-04;
+		}
+	}
+	&.hidden {
+		display: none;
 	}
 }
 
 @keyframes scroll-banner {
 	0% {
-		transform: translate(0, -50%);
+		transform: translate(0, 0%);
 	}
 	100% {
-		transform: translate(-100%, -50%);
+		transform: translate(-100%, 0%);
 	}
 }
 
 @keyframes scroll-banner1 {
 	0% {
-		transform: translate(100%, -50%);
+		transform: translate(100%, 0%);
 	}
 	100% {
-		transform: translate(0%, -50%);
+		transform: translate(0%, 0%);
 	}
 }
 
 .project-container {
-	max-width: 1100px;
+	max-width: 800px;
 	margin: auto;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	margin-bottom: 4rem;
 	padding: 1rem;
 
 	@include variables.media-lg {
+		margin-top: 6rem;
 		padding: unset;
 		max-width: 900px;
 	}
@@ -613,6 +716,23 @@ footer {
 	img {
 		position: relative;
 		width: 100%;
+	}
+}
+
+.project-back-button {
+	position: absolute;
+	top: 2rem;
+	text-decoration: none;
+	color: var(--color);
+	p {
+		display: flex;
+		align-items: center;
+		font-size: 0.9rem;
+		gap: 0.2rem;
+	}
+	span {
+		font-size: 1rem;
+		transform: rotate(180deg);
 	}
 }
 
@@ -639,7 +759,7 @@ footer {
 		}
 	}
 
-	@include variables.media-sm {
+	@include variables.media-md {
 		flex-direction: row;
 
 		article {
@@ -648,12 +768,19 @@ footer {
 	}
 }
 
-.related-nav {
+.project-media {
+	min-height: unset;
+	padding-bottom: 3rem;
+	z-index: 1;
+}
+
+.project-related-nav {
 	width: 100%;
+	min-height: unset;
 	display: flex;
 	justify-content: space-between;
 	padding-top: 8rem;
-	padding-bottom: 10rem;
+	padding-bottom: 8rem;
 
 	.related-nav-element {
 		width: 50%;
@@ -666,12 +793,12 @@ footer {
 		}
 
 		h6 {
-			color: variables.$main-00;
+			color: var(--color);
 		}
 		h4 {
 			color: black;
 			&:hover {
-				color: variables.$main-00;
+				color: var(--color);
 			}
 		}
 		a {
@@ -693,4 +820,112 @@ footer {
 			padding-right: 1.5rem;
 		}
 	}
+}
+
+.project-player-overlay-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+}
+
+.project-player-overlay {
+	margin: 0 auto;
+	height: 100%;
+}
+
+.project-player-overlay-fixed {
+	position: fixed;
+}
+
+.player-progress-bar-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: all;
+	opacity: 1;
+	transition: 0.2s;
+	cursor: pointer;
+
+	.player-progress-bar {
+		width: 0;
+		height: 1rem;
+		background: var(--color);
+	}
+}
+
+.player-controls {
+	position: relative;
+	width: 4rem;
+	padding-left: 1rem;
+	pointer-events: all;
+	margin-top: 40vh;
+	cursor: pointer;
+	svg {
+		width: 100%;
+		overflow: visible;
+		stroke: var(--color);
+		stroke-width: 2px;
+	}
+
+	&:hover {
+		svg {
+			fill: var(--color);
+		}
+	}
+
+	@include variables.media-md {
+		width: 5rem;
+	}
+}
+
+.player-title {
+	position: relative;
+	height: 1.75rem;
+	width: 100vw;
+	left: calc((100% - 100vw) / 2);
+	margin-top: 2rem;
+	opacity: 1;
+	transition: 0.2s;
+	p:nth-of-type(1) {
+		animation: scroll-banner 5s infinite linear;
+	}
+	p:nth-of-type(2) {
+		animation: scroll-banner1 5s infinite linear;
+		animation-delay: -5s;
+	}
+	p {
+		min-width: 100%;
+		font-size: 3.8rem;
+		position: absolute;
+		margin: 0;
+		line-height: 1em;
+		white-space: nowrap;
+		padding-right: 1rem;
+		color: var(--color);
+	}
+}
+
+.player-progress-num {
+	position: relative;
+	padding-left: 1rem;
+	opacity: 1;
+	transition: 0.2s;
+	p,
+	span {
+		font-size: 2.3rem;
+		color: var(--color);
+	}
+}
+
+.player-hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.controls-hidden {
+	display: none;
 }

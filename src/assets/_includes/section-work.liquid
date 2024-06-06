@@ -1,7 +1,7 @@
 <section class="section-work" id="work">
   <h2>selected works</h2>
   <div class="work-container">
-    {% for project in site.projects %}
+    {% for project in site.projects limit: 5 %}
       <a class="work-element" href={{ project.title | slugify }}>
         <div class="work-element-background">
           {{ project.svg }}
@@ -11,7 +11,19 @@
       </a>
     {% endfor %}
   </div>
-  <h6>
-    <a href="">to full list of works</a>
-  </h6>
+  {% if site.projects.size > 5 %}
+    <h5 class="to-full-list-button">
+      display full list of works
+    </h5>
+    <div class="full-works-list hidden">
+      {{ site.projects.size }}
+      {% for project in site.projects %}
+        {% for project in site.projects %}
+          <a href={{ project.title | slugify }}>
+            <h3>{{ project.title }}</h3>
+          </a>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
 </section>
