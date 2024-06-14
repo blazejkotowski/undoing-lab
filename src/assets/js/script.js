@@ -26,6 +26,17 @@ class Section {
 		this.bottom = this.top + this.height
 	}
 
+	getTopPosition() {
+		return Math.floor(this.element.getBoundingClientRect().top)
+	}
+
+	getBottomPosition() {
+		return (
+			Math.floor(this.element.getBoundingClientRect().top) +
+			Math.floor(this.element.getBoundingClientRect().height)
+		)
+	}
+
 	/*
 	get top() {
 		return this.top
@@ -92,21 +103,12 @@ window.onscroll = () => {
 	} else {
 		elementTitleDescription[0].classList.remove('small')
 	}
-	/*
+
 	if (
-		window.pageYOffset + aboutSection.top > aboutSection.top &&
-		window.pageYOffset < aboutSection.bottom
+		aboutSection.getTopPosition() <= window.innerHeight &&
+		aboutSection.getBottomPosition() - window.innerHeight >= 0
 	) {
-		elementTitleDescription[0].classList.add("small")
-	} else {
-		elementTitleDescription[0].classList.remove("small")
-	}
-*/
-	if (
-		window.pageYOffset + aboutSection.top * 0.7 > aboutSection.top &&
-		window.pageYOffset < aboutSection.bottom
-	) {
-		//console.log("about is visible")
+		// console.log('about is visible')
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
 			element.classList.add('filled-color')
@@ -118,8 +120,11 @@ window.onscroll = () => {
 		}
 	}
 
-	if (window.pageYOffset >= workSection.top && window.pageYOffset < workSection.bottom) {
-		console.log('work is visible')
+	if (
+		workSection.getTopPosition() <= 0.2 * window.innerHeight &&
+		workSection.getBottomPosition() > 0
+	) {
+		// console.log('work is visible')
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
 			element.classList.add('outlined-black')
@@ -131,8 +136,8 @@ window.onscroll = () => {
 		}
 	}
 
-	if (window.pageYOffset > contactSection.top && window.pageYOffset < contactSection.bottom) {
-		console.log('contact is visible')
+	if (contactSection.getTopPosition() <= 0 && contactSection.getBottomPosition() > 0) {
+		// console.log('contact is visible')
 		for (let i = 0; i < backgroundSection.children.length; i++) {
 			const element = backgroundSection.children[i]
 			element.classList.add('outlined-color')
@@ -145,13 +150,4 @@ window.onscroll = () => {
 			element.classList.remove('outlined-color')
 		}
 	}
-	/*
-	let percentageOfContainer =
-		((window.pageYOffset - Math.floor(myelementposition)) * 50) / sectionWork.clientHeight
-	worksContainer.style.offsetDistance = `${window.pageYOffset - Math.floor(myelementposition)}px`
-	console.log(window.pageYOffset - Math.floor(myelementposition), myelementposition)*/
-}
-
-window.onresize = () => {
-	//sectionAbout.style.marginTop = `${percentageOfContainer}%`
 }
