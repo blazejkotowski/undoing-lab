@@ -1,0 +1,35 @@
+<section class="section-about" id="about">
+  {% for page in site.pages %}
+    {% if page.title == 'about' %}
+      <article class="about-container">
+        {{ page.content | markdownify }}
+      </article>
+    {% endif %}
+  {% endfor %}
+  <h2>who we are:</h2>
+  <article class="profiles-wrapper">
+    {% for page in site.pages %}
+      {% if page.title == 'profile b' %}
+        <div class="profile-container">
+          {{ page.content | markdownify }}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% for page in site.pages %}
+      {% if page.title == 'profile d' %}
+        <div class="profile-container">
+          {{ page.content | markdownify }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </article>
+  <div class="element-title-description">
+    <p>
+      {% for page in site.pages %}
+        {% if page.title == 'general' %}
+          {{ page.description }}
+        {% endif %}
+      {% endfor %}
+    </p>
+  </div>
+</section>
