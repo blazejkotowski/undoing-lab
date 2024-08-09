@@ -6,8 +6,11 @@ images:
     - src: 'critically_extant_credit_Sarah_van_Binsbergen.jpeg'
       alt: ''
       caption: ''
+    - src: 'critically_extant_2.jpg'
+      alt: ''
+      caption: ''
 sound:
-    src: 'critically-extant-entangled-speciments-15mins.wav'
+    src: 'Critically-Extant-sound.mp3'
 video:
     src: ''
 layout: project
@@ -19,8 +22,27 @@ svg: <svg
     </svg>
 ---
 
-process:
+Do data collections and representations of nature effectively contribute to its restoration?
 
-For Entangled Others’ installation ‘Critically Extant’ we researched on concepts of species extinction and data representation, identifying and testing approaches and techniques for synthetic soundscapes, and processing the provided audio material towards post-natural aesthetics.
+Entangled Others’ installation Critically Extant addresses the limitations of computational modelling in evaluating and restoring ecosystem balance, highlighting the challenges in accurately tracking biodiversity loss. The artwork envisions artificial animal and plant species to playfully underscore the absence of certain species in databases used for implementing protective or restorative measures. It critiques how our ignorance of some life forms leads to their unnecessary destruction.
 
-We eventually created a soundscape for the initial sounds to nestle in a way that was complementing the visual artwork. For the set-up we used spatial elements to attune to the exhibition space, simulating the listening experience of being in nature. The result was a hyperrealistic, lively environment imbued with ecological sensitivity.
+Our role as sound designers was to use generated specimens of imaginary animal vocalisations to craft sonic habitats, thereby creating ecological environments for these imagined species within the exhibition space. To achieve this, we explored aesthetics and techniques for synthetic environmental soundscapes and shaped the provided audio material to evoke a post-natural aesthetic. This approach emphasised the uncanny quality of the artificially generated nature and unveiled the disparity between reality and computational representation.
+
+We ultimately developed a sonic environment where the raw specimen sounds could integrate seamlessly, enhancing the artwork and providing a captivating experience for visitors. By employing physical sound modelling and spatial elements, we tailored the soundscape to the exhibition space, simulating an authentic natural listening experience. The result was a hyperrealistic, vibrant aural habitat imbued with ecological sensitivity.
+
+For the exhibition’s opening, we assembled a two-hour DJ set featuring synthesised environmental sounds, soft melodic sequences, and selected, manipulated field recordings to create a vibrant post-natural soundscape teeming with life. As the room filled with this vivid soundscape, animated portraits of imagined species in Entangled Others' Critically Extant enveloped visitors in a remarkable experience. This audiovisual synergy not only captivated the senses but also highlighted the stark disparity in the statistical representation of endangered species in underdeveloped or under-quantified regions across our planet.
+Wonderbaarlijke Wezens (Wonderful Creatures) at Kunsthal KADE, Amersfoort, in June 2023.
+
+<div class="project-extras" markdown="1">
+
+**Links**
+
+[Entangled Others](https://entangledothers.studio/)<br/>
+[Critically Extant](https://criticallyextant.com/)<br/>
+[Sofia Crespo](https://sofiacrespo.com/)<br/>
+[kunsthalkade](https://www.kunsthalkade.nl/nl/)<br/>
+
+**Acknowledgements**
+
+Image: Critically Extant - Sofia Crespo (Entangled Studio)
+</div>

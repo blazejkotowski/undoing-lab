@@ -413,6 +413,7 @@ section.absolute {
 }
 
 .about-container {
+	// text-align: justify;
 	width: 100%;
 	@include variables.media-md {
 		width: 50%;
@@ -746,6 +747,10 @@ footer {
 		}
 	}
 
+	.project-extras * {
+		font-size: 0.8rem;
+	}
+
 	article {
 		flex-basis: 60%;
 		padding-bottom: 2rem;
@@ -776,6 +781,17 @@ footer {
 	min-height: unset;
 	padding-bottom: 3rem;
 	z-index: 1;
+
+	.project-video {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0.3rem;
+	}
+
+	iframe {
+		aspect-ratio: 16 / 9;
+		width: 100% !important;
+	}
 }
 
 .project-related-nav {

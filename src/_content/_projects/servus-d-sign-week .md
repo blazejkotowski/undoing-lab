@@ -8,7 +8,7 @@ images:
       alt: ''
       caption: ''
 sound:
-    src: 'servus-background-04.wav'
+    src: 'servus_design_week_background.mp3'
 video:
     src: ''
 layout: project
@@ -21,3 +21,21 @@ svg:
 Tasked with crafting a sonic identity for a festival dedicated to experimental and independent design practices, our approach began with a comprehensive exploration of sonic branding aesthetics. This research extended to incorporate various familiar auditory elements of the digital telecommunications, including ear cons, ringtones, and jingles. To enhance our creative process, we curated an extensive archive of iconic branded audio cues, strategically utilising them as raw material for our composition. This deliberate curation aimed to infuse our sonic identity with a rich tapestry of recognizable and innovative elements, contributing to the festival's distinct auditory statement.
 
 The outcome of our endeavour involved creating new compositions based on iconic sounds, listed in soundbanks categorised according to their function as radio ambiences, jingles, transitions and interaction sounds. The material was designed to spark narrative shifts and to assist our customers in structuring and supporting their live conversations. All in all, we crafted a sonic identity for the design week that constituted a distinct aural universe.
+
+<div class="project-extras" markdown="1">
+
+**ACKNOWLEDGEMENTS**
+The conversations were broadcasted by [Radio FRO](https://fro.at) and are now documented in form of a podcast, online at the Cultural Broadcasting Archive
+
+A project by servus.at – Kunst und Kultur in Netz<br/>
+In cooperation with: Radio FRO & Potato Publishing<br/>
+Organized by Gabriela Gordillo & Davide Bevilacqua<br/>
+Graphic concept and webdev: Juan Pablo Linares<br/>
+Sound design by Undoing Studio (Daphne Xanthopoulou & Błażej Kotowski)<br/>
+Funded by BMKOES, Kulturland OÖ, Linz Kultur
+
+**LINKS**
+
+[https://core.servus.at/de/projekt/2021/servus-dsign-week](https://core.servus.at/de/projekt/2021/servus-dsign-week)
+
+</div>
