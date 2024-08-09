@@ -1,5 +1,5 @@
 ---
-title: 'world earth codec'
+title: 'whole earth codec'
 tags:
     - video
 images:
