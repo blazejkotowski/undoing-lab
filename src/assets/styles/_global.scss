@@ -435,6 +435,16 @@ section.absolute {
 	@include variables.media-sm {
 		flex-basis: 50%;
 	}
+
+	a {
+		color: inherit !important;
+	}
+
+	img {
+		width: 100%;
+		padding-right: 3em;
+		box-sizing: border-box
+	}
 }
 
 .contact-wrapper {

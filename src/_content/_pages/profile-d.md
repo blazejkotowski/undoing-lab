@@ -2,7 +2,9 @@
 title: profile d
 ---
 
-**Daphne Xanthopoulou** is a sound artist, researcher, designer, and curator based in Barcelona. Through participatory performances, podcasts, and interactive installations, she explores contemporary sonic practices with a focus on using speculative methodologies as a strategy for earthly re-enchantment.
+<img src="/assets/images/daphne.jpg"/>
+
+[**Daphne Xanthopoulou**](https://daphnex.me){:target="_blank"} is a sound artist, researcher, designer, and curator based in Barcelona. Through participatory performances, podcasts, and interactive installations, she explores contemporary sonic practices with a focus on using speculative methodologies as a strategy for earthly re-enchantment.
 
 She has an EA degree in Digital Arts from the Department of Interface Cultures (Christa Sommerer and Laurent Mignonneau) at the University of Art and Design in Linz, an MA in Music Therapy from the University of Barcelona and a bachelor's degree in Psychology from the Panteion University of Social and Political Sciences of Athens.
 
