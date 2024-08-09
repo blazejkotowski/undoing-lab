@@ -2,12 +2,12 @@
 title: about
 ---
 
-**UNDOING LAB**  
-Is a digital lab  
-that casts new worlds  
+**UNDOING STUDIO**
+Is a digital lab
+that casts new worlds
 through new sounds
 
-Founded in conceptual literacy, artistic foresight and affective sensibility, at Undoing lab we craft hybrid forms of media that forge new experiences.
+Founded in conceptual literacy, artistic foresight and affective sensibility, at Undoing Studio we craft hybrid forms of media that forge new experiences.
 
 With a good grip of contemporary tendencies and new technologies, we build upon the capacity of sound to create sensations, atmospheres and narratives that will be remembered.
 
