@@ -31,7 +31,7 @@ A project by servus.at – Kunst und Kultur in Netz<br/>
 In cooperation with: Radio FRO & Potato Publishing<br/>
 Organized by Gabriela Gordillo & Davide Bevilacqua<br/>
 Graphic concept and webdev: Juan Pablo Linares<br/>
-Sound design by Undoing Studio (Daphne Xanthopoulou & Błażej Kotowski)<br/>
+Sound design by Undoing (Daphne Xanthopoulou & Błażej Kotowski)<br/>
 Funded by BMKOES, Kulturland OÖ, Linz Kultur
 
 **LINKS**

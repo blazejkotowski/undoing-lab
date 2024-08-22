@@ -887,6 +887,25 @@ footer {
 	}
 }
 
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
+
+
 .player-controls {
 	position: relative;
 	width: 4rem;
@@ -894,6 +913,7 @@ footer {
 	pointer-events: all;
 	margin-top: 40vh;
 	cursor: pointer;
+	animation: jump 1s ease-out 3; /* Apply the jump animation */
 	svg {
 		width: 100%;
 		overflow: visible;
